@@ -1,0 +1,55 @@
+<div class="landing-page-container">
+  <div class="landing-page-banner">
+    <!-- <img src="./assets/img/banner-dinnytm.png" alt="" class="landing-page-banner-img"> -->
+    <div class="landing-page-banner-content">
+      <div class="landing-page-banner-content-lyrics">
+        Music is my Daily work noba ke andfuman'into/
+        <br>
+        Ungayeki uphathi pen nephepha kuzade kuvele utshintsho/
+        <br>
+      </div>
+      <div class="landing-page-banner-content-subtext">
+        ~ Dinny TM, God Blessing
+      </div>
+      <div class="landing-page-banner-content-subtext no-padding">
+        <a title="view instagram account" href="https://soundcloud.com/dinnytm-za" target="_blank"
+          class="landing-page-banner-content-subtext-icon fab fa-instagram color-white"></a>
+        <a title="view facebook" href="https://soundcloud.com/dinnytm-za" target="_blank"
+          class="landing-page-banner-content-subtext-icon fab fa-facebook-f color-facebook-blue"></a>
+        <a title="view soundcloud account" href="https://soundcloud.com/dinnytm-za" target="_blank"
+          class="landing-page-banner-content-subtext-icon fab fa-soundcloud color-soundcloud-orange"></a>
+        <a title="view spotify account"
+          href="https://open.spotify.com/artist/6T9wZXzG79FWxWX4iiuFVM?si=16b4TNJbROCc5ZyiMT-wNg&dl_branch=1"
+          target="_blank" class="landing-page-banner-content-subtext-icon fab fa-spotify color-spotify-green"></a>
+        <a title="view itunes account" href="https://music.apple.com/us/artist/dinny-tm/1545855620" target="_blank"
+          class="landing-page-banner-content-subtext-icon fab fa-itunes-note color-itunes-purple"></a>
+      </div>
+    </div>
+    <a class="landing-page-banner-browse fas fa-chevron-down uptodown" href="#talent"></a>
+  </div>
+  <div class="landing-page-section" id="talent">
+    <div class="landing-page-section-heading">
+      TALENT
+    </div>
+    <div class="landing-page-section-content" *ngIf="undefined !== artists">
+      <app-artist-card *ngFor="let artist of artists" [artistName]="artist?.artistname"
+        [profession]="artist?.artistry[0]" [latestArtistry]="[
+      {
+        imgUrl: artist?.library[0]?.imgurl,
+        title: artist?.library[0]?.title,
+        url: artist?.library[0]?.link
+      },
+      {
+        imgUrl: artist?.library[1]?.imgurl,
+        title: artist?.library[1]?.title,
+        url: artist?.library[1]?.link
+      }
+  ]" (profileClick)="showArtistModal(artist)" [artistImg]="artist?.artistimg">
+      </app-artist-card>
+    </div>
+  </div>
+  <div class="landing-page-section">
+  </div>
+  <div class="landing-page-section"></div>
+</div>
+<app-artist-modal></app-artist-modal>

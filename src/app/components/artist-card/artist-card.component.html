@@ -1,0 +1,13 @@
+<div class="artist-card" (click)="profileClick()">
+  <div class="artist-card-content">
+    <img [src]="artistImg" [alt]='artistName' class="artist-card-img" />
+  </div>
+  <div class="about-container">
+    <div class="color-primary font-weight-bold text-large">
+      {{artistName}}
+    </div>
+    <div class="color-grey font-size-default">
+      {{profession}}
+    </div>
+  </div>
+</div>

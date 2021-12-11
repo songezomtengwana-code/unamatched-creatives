@@ -1,0 +1,34 @@
+.btn {
+  outline: none;
+  border-color: var(--primarycolour);
+  background-color: transparent;
+  color: var(--primarycolour);
+  border-radius: 0;
+  font-weight: 500;
+  padding: 6px 13px;
+
+  &:active {
+    box-shadow: var(--box-shadow);
+  }
+}
+
+.btn-primary {
+  background-color: var(--primarycolour);
+  color: var(--black);
+  font-weight: 600;
+
+}
+
+.--dark-theme {
+  border-color: var(--black);
+  background-color: var(--black);
+  color: var(--grey);
+}
+
+.btn.disabled {
+  cursor: not-allowed;
+  background-color: var(--darkgrey);
+  border-color: var(--darkgrey);
+  color: var(--grey);
+  opacity: 1;
+}

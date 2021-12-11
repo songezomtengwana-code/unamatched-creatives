@@ -1,0 +1,49 @@
+.artist-card {
+  display: flex;
+  flex-flow: column !important;
+  justify-content: center;
+  padding: 2em .5em;
+  background-color: transparent;
+  max-width: 17rem;
+  cursor: pointer;
+  margin: auto;
+
+  &:hover {
+    transform: translateY(-7.5px);
+    transition: all .8s;
+  }
+
+  .artist-card-content {
+    display: flex;
+    flex-flow: column !important;
+    justify-content: center;
+
+    .artist-card-img {
+      height: 135px;
+      width: 135px;
+      object-fit: cover;
+      object-position: center;
+      margin: auto;
+      border-radius: 50%;
+    } 
+    .artist-card-project {
+      box-shadow: var(--box-shadow);
+      align-self: center;
+      margin: 2.5px;
+      width: 62.5px;
+      height: 62.5px;
+      object-fit: cover;
+      object-position: center;
+    } 
+  }
+
+  .about-container {
+    text-align: center;
+    margin: 10px 0;
+
+    .link {
+      font-size: 18px;
+      margin: 20px 0 0 0;
+    }
+  }
+}

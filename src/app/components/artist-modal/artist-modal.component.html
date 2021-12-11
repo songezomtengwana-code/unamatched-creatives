@@ -1,0 +1,39 @@
+<div class="artist-modal-overlay" *ngIf="activeArtist">
+  <div class="artist-modal-container">
+    <div class="artist-modal-header">
+      <div class="artist-modal-header-title">{{activeArtist?.artistname}}</div>
+      <div class="artist-modal-icon" (click)="closeArtistModal()"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="artist-modal-body">
+      <div class="artist-modal-body-left">
+        <div class="artist-modal-details">
+          <img [src]="activeArtist?.artistimg" alt="" class="artist-modal-img">
+        </div>
+      </div>
+      <div class="artist-modal-body-right">        
+      <div class="artist-modal-title">
+        {{getArtistry(activeArtist?.artistry)}}
+      </div>
+      <div class="artist-modal-artistry-description">
+        {{activeArtist?.artistbio}}
+      </div>
+      <div class="artist-modal-title">
+        Important Links
+      </div>
+      <div class="artist-modal-details-content" *ngIf="activeArtist?.importantlinks">
+        <a *ngFor="let link of activeArtist?.importantlinks" [title]="'view '+ link?.linkname" [href]="link?.link"
+          target="_blank" class="artist-modal-details-content-icon" [ngClass]="[link?.fonticon, link?.fonticoncolor]">
+          <span class="artist-modal-details-content-icon-text">{{link?.linkname}}</span>
+        </a>
+      </div>
+      <div class="artist-modal-title">
+        Library
+      </div>
+      <div class="artist-modal-artistry" *ngIf="activeArtist?.library">
+        <img *ngFor="let lib of activeArtist?.library " [title]="lib?.title" [src]="lib?.imgurl" alt=""
+          class="artist-modal-artistry-thumbnail">
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
